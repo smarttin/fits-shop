@@ -8,8 +8,8 @@ import "./sign-in.scss";
 
 class SignIn extends React.Component {
   state = {
-    email: "",
-    password: "",
+    email: "smartt@gmail.com",
+    password: "smartt",
   };
 
   handleSubmit = (event) => {
