@@ -3,13 +3,12 @@ import React from "react";
 import FormInput from "../form-input/form-input";
 import CustomButton from "../custom-button/custom-button";
 import { signInWithGoogle, auth } from "../../firebase/firebase.util";
-
-import "./sign-in.scss";
+import { SignInContainer, SignInTitle, ButtonsBarContainer } from "./sign-in.styles";
 
 class SignIn extends React.Component {
   state = {
     email: "martt@gmail.com",
-    password: "martt",
+    password: "111111",
   };
 
   handleSubmit = async (event) => {
@@ -30,8 +29,8 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className="sign-in">
-        <h2>I already have an account</h2>
+      <SignInContainer>
+        <SignInTitle>I already have an account</SignInTitle>
         <span>Sign in with your email and password</span>
 
         <form onSubmit={this.handleSubmit}>
@@ -53,12 +52,12 @@ class SignIn extends React.Component {
             label='password'
           />
 
-          <div className='buttons'>
-          <CustomButton type="submit">Sign in</CustomButton>
-          <CustomButton onClick={signInWithGoogle} isGoogleSignin>Sign in with google</CustomButton>
-          </div>
+          <ButtonsBarContainer>
+            <CustomButton type="submit">Sign in</CustomButton>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignin>Sign in with google</CustomButton>
+          </ButtonsBarContainer>
         </form>
-      </div>
+      </SignInContainer>
     );
   }
 }
